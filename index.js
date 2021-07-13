@@ -1,9 +1,12 @@
 const express = require('express')
 const cors = require('cors')
 
+const {getEvents} = require('./src/events')
+
 const app = express()
 app.use(cors())
 
+app.get('/events', getEvents)
 app.get('/', (req, res) => {
     res.send('🏠 H O M E P A G E 📄')
 })
